@@ -1,0 +1,25 @@
+.navbar{
+   margin:auto;
+}
+
+.modelTable{
+   float:right
+}
+.dbtitle{
+   text-align: center;
+}
+.pageControls{
+   text-align: center;
+}
+.spinnerClass{
+   margin:auto;
+   margin-top:30%;
+   margin-left: 50%;
+}
+
+@media (min-width: 368px) and (max-width: 667) {
+.pageControls{
+padding-left: 0px;
+}
+}
+

@@ -1,0 +1,51 @@
+<div class="container">
+
+  <div class="row">
+    <div class="col-md-12 col-sm-12">
+      <header class="bg-dark">
+        <button class="collapse-btn" (click)="collapseSidebar()">&#9776;</button>
+        <span class="welcomeTxt">{{headingText}}</span>
+      </header>
+    </div>
+  </div>
+
+  <div class="row">
+
+    <div class="col-md-2 sidebar">
+      <app-sidebar></app-sidebar>
+    </div>
+
+    <div *ngIf="this.sidebarCollapsed">
+      <div class="card card-body">
+
+        <ul class="nav">
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+              Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['./vehicledashboard']" routerLinkActive="active"
+              [routerLinkActiveOptions]="{exact:true}">
+              Dashboard</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['./vehicledashboard/about']" routerLinkActive="active"
+              [routerLinkActiveOptions]="{exact:true}">
+              About</a>
+          </li>
+        </ul>
+
+      </div>
+    </div>
+
+    <div class="col-md-6 mainPage col-sm-6 col-xs-6">
+      <router-outlet></router-outlet>
+    </div>
+
+    <div class="col-md-4 modeltable ">
+      <div class="spinner" *ngIf="vehicleSrv.showModelDataSpinner" ></div>
+        <app-vehicle-details *ngIf="vehicleSrv.showVehicleModelData"></app-vehicle-details>
+    </div>
+
+  </div>
+</div>

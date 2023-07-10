@@ -1,0 +1,39 @@
+.sidebar {
+  width: 200px;
+  background-color: #454444;
+  color: rgb(247, 250, 251);
+  height: 100vh;
+  position: fixed;
+  top: 20;
+}
+
+.sidebar table {
+  width: 100%;
+  top: 20;
+}
+
+.sidebar tr {
+  padding: 20px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+}
+
+.sidebar tr td {
+  text-align: center;
+}
+
+.sidebar tr td svg {
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
+.sidebar tr:hover {
+  background-color: rgb(137, 137, 138);
+  color: rgb(238, 233, 233);
+}
+
+.sidebar tr.active {
+  background-color: rgb(108, 108, 108);
+  color: white;
+}

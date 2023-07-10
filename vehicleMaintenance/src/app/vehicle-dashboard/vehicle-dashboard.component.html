@@ -1,0 +1,34 @@
+   
+<div class="spinnerClass" *ngIf="this.vehicleSrv.showSpinner">
+  <app-spinner></app-spinner>
+</div>
+
+<table class="table table-striped " *ngIf="!errorFlag && !this.vehicleSrv.showSpinner">
+  <thead>
+    <tr class="table-light">
+      <th colspan="2" class="dbtitle">{{title}}</th>
+    </tr>
+    <tr>
+      <th scope="col">{{vehicleSrv.vehicleDetail.Make_ID.label}}</th>
+      <th scope="col">{{vehicleSrv.vehicleDetail.Make_Name.label}}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of vehicleAllDetails.Results | paginate: { itemsPerPage:8, currentPage: page };let i=index">
+      <td  >
+        <button class="btn btn-link" (click)="onMakeIDClick(item)">{{ item.Make_ID }}</button>
+      </td>
+      <td >{{item.Make_Name }}</td>
+    </tr>
+    <tr>
+      <td colspan="2" class="pageControls">
+        <pagination-controls (pageChange)="page = $event" class="float-right">  </pagination-controls>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<div *ngIf="errorFlag">
+  <h1>{{errorMessage}}</h1>
+</div>
+
